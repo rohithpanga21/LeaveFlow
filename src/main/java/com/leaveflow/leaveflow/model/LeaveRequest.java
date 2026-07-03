@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "leaverequests")
-public class LeaveRequests {
+public class LeaveRequest {
     @Id
     @Column(name = "leave_id")
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -48,7 +48,7 @@ public class LeaveRequests {
     @JoinColumn(name ="approved_by" )
     private User approvedBy;
 
-    public LeaveRequests(){
+    public LeaveRequest(){
 
     }
 
