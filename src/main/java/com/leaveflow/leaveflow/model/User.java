@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "users")
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,9 +49,9 @@ public class Users {
 
     @ManyToOne
     @JoinColumn(name = "manager_id")
-    private Users manager;
+    private User manager;
 
-    public Users(){
+    public User(){
 
     }
 
@@ -127,11 +127,11 @@ public class Users {
         this.status = status;
     }
 
-    public Users getManager() {
+    public User getManager() {
         return manager;
     }
 
-    public void setManager(Users manager) {
+    public void setManager(User manager) {
         this.manager = manager;
     }
 

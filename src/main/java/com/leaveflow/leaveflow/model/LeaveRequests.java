@@ -42,11 +42,11 @@ public class LeaveRequests {
 
     @ManyToOne
     @JoinColumn(name="employee_id")
-    private Users employee;
+    private User employee;
 
     @ManyToOne
     @JoinColumn(name ="approved_by" )
-    private Users approvedBy;
+    private User approvedBy;
 
     public LeaveRequests(){
 
@@ -125,19 +125,19 @@ public class LeaveRequests {
     }
 
 
-    public Users getEmployee() {
+    public User getEmployee() {
         return employee;
     }
 
-    public void setEmployee(Users employee) {
+    public void setEmployee(User employee) {
         this.employee = employee;
     }
 
-    public Users getApprovedBy() {
+    public User getApprovedBy() {
         return approvedBy;
     }
 
-    public void setApprovedBy(Users approvedBy) {
+    public void setApprovedBy(User approvedBy) {
         this.approvedBy = approvedBy;
     }
 }
