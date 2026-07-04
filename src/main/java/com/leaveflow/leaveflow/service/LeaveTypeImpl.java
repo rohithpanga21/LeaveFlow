@@ -30,8 +30,8 @@ public class LeaveTypeImpl implements LeaveTypeService {
     }
 
     @Override
-    public LeaveType updateLeaveType(LeaveType leaveType) {
-        LeaveType exisitngLeaveType = leaveTypeRepo.findById(leaveType.getLeaveId())
+    public LeaveType updateLeaveType(int id, LeaveType leaveType) {
+        LeaveType exisitngLeaveType = leaveTypeRepo.findById(id)
                 .orElseThrow(()->new RuntimeException("Leave Type not Found"));
 
         exisitngLeaveType.setLeaveName(leaveType.getLeaveName());

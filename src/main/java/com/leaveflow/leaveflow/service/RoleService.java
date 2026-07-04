@@ -8,6 +8,6 @@ public interface RoleService {
     Role getRoleById(int id);
     Role createRole(Role role);
     void deleteRoleById(int id);
-    Role updateRole(Role role);
+    Role updateRole(int id,Role role);
     List<Role> getAllRoles();
 }

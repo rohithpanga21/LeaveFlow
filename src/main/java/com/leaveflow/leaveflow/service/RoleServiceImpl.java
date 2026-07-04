@@ -28,8 +28,8 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public Role updateRole(Role role) {
-        Role existingRole = roleRepo.findById(role.getRoleId())
+    public Role updateRole(int id,Role role) {
+        Role existingRole = roleRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Role not found"));
 
         existingRole.setRoleName(role.getRoleName());

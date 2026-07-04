@@ -11,7 +11,7 @@ public interface LeaveTypeService {
 
     LeaveType createLeaveType(LeaveType leaveType);
 
-    LeaveType updateLeaveType(LeaveType leaveType);
+    LeaveType updateLeaveType(int id, LeaveType leaveType);
 
     void deleteLeaveTypeById(int id);
 }

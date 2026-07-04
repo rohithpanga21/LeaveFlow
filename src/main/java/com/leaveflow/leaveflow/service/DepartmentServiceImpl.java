@@ -25,8 +25,8 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
-    public Department updateDept(Department dept) {
-        Department existingDept=departmentRepo.findById(dept.getDeptId()).orElse(null);
+    public Department updateDept(int id,Department dept) {
+        Department existingDept=departmentRepo.findById(id).orElse(null);
         if(existingDept != null){
             existingDept.setDeptName(dept.getDeptName());
             return departmentRepo.save(existingDept);

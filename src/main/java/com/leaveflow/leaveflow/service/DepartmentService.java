@@ -11,7 +11,7 @@ public interface DepartmentService {
 
     Department getDeptById(int id);
 
-    Department updateDept(Department dept);
+    Department updateDept(int id, Department dept);
 
     void deleteDeptById(int id);
 
