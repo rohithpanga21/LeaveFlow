@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="leavetypes")
-public class leaveTypes {
+public class LeaveType {
     @Id
     @Column(name = "leave_type_id")
     private int leaveId;
@@ -18,7 +18,7 @@ public class leaveTypes {
     @Column(name = "max_days")
     private int maxDays;
 
-    public leaveTypes(){//Empty constructor to create a obj using hibernate and spring Jpa
+    public LeaveType(){//Empty constructor to create a obj using hibernate and spring Jpa
 
     }
 

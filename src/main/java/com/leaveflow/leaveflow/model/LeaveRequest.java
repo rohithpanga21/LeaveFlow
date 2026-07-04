@@ -38,7 +38,7 @@ public class LeaveRequest {
 
     @ManyToOne
     @JoinColumn(name = "leave_type_id")
-    private leaveTypes leaveType;
+    private LeaveType leaveType;
 
     @ManyToOne
     @JoinColumn(name="employee_id")
@@ -108,11 +108,11 @@ public class LeaveRequest {
         this.approvedAt = approvedAt;
     }
 
-    public leaveTypes getLeaveType() {
+    public LeaveType getLeaveType() {
         return leaveType;
     }
 
-    public void setLeaveType(leaveTypes leaveType) {
+    public void setLeaveType(LeaveType leaveType) {
         this.leaveType = leaveType;
     }
 
