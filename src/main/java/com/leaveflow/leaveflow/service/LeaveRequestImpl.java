@@ -20,7 +20,7 @@ public class LeaveRequestImpl implements LeaveRequestService {
 
     @Override
     public LeaveRequest getLeaveRequestById(int id) {
-        return leaveRequestRepo.findById(id).orElse(null);
+        return leaveRequestRepo.findById(id).orElseThrow(()->new RuntimeException("Leave Request Not Found"));
     }
 
     @Override
