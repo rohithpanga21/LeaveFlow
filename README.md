@@ -279,7 +279,7 @@ Completed
 * Generated database tables using Hibernate
 * Verified table creation in MySQL
 
-Concepts Learned
+### Concepts Learned
 
 * Entity Mapping
 * Hibernate
@@ -308,7 +308,7 @@ Completed
 * Practiced CRUD operations using Spring Data JPA
 * Implemented constructor-based dependency injection
 
-Concepts Learned
+### Concepts Learned
 
 * JpaRepository
 * Dependency Injection
@@ -342,26 +342,70 @@ Completed
 
 #### LeaveType Module
 
-* Created Repository
-* Designed Service Interface
-* Started Service Implementation
+* LeaveType Repository
+* LeaveType Service
+* LeaveType Service Implementation
+* CRUD operations
+
+#### REST Controllers
+
+Implemented REST Controllers for all modules:
+
+* UserController
+* DepartmentController
+* RoleController
+* LeaveTypeController
+* LeaveRequestController
+
+Implemented REST endpoints using:
+
+* `@RestController`
+* `@RequestMapping`
+* `@GetMapping`
+* `@PostMapping`
+* `@PutMapping`
+* `@DeleteMapping`
+* `ResponseEntity`
+
+#### API Testing
+
+Successfully tested CRUD APIs using Postman.
+
+Verified:
+
+* Create operations (POST)
+* Retrieve operations (GET)
+* Update operations (PUT)
+* Delete operations (DELETE)
+* Request parameter handling
+* Path variable handling
+* JSON request and response bodies
+* Database persistence with MySQL
 
 #### Git Workflow Practiced
 
-```
+```bash
 git status
 git add .
-git commit -m "Implemented Department and Role services"
+git commit -m "Implemented REST Controllers and tested APIs"
 git push origin <branch-name>
 ```
 
-Concepts Learned
+### Concepts Learned
 
+* REST API Development
+* REST Controllers
+* Request Mapping
+* HTTP Methods (GET, POST, PUT, DELETE)
+* ResponseEntity
+* Path Variables
+* Request Body Mapping
 * Constructor Injection
-* `JpaRepository`
-* `Optional`
-* `orElseThrow()`
+* JpaRepository
+* Optional
+* orElseThrow()
 * Service Layer Architecture
+* API Testing with Postman
 * Git Staging
 * Git Commits
 * GitHub Push Workflow
@@ -376,39 +420,34 @@ Concepts Learned
 * Maven Configuration
 * MySQL Configuration
 * Project Structure
-* Users Module
+* User Module
 * Department Module
 * Role Module
+* LeaveType Module
 * LeaveRequest Module
+* Entity Layer
 * Repository Layer
-* Service Layer (Users)
-* Service Layer (LeaveRequest)
-* Service Layer (Department)
-* Service Layer (Role)
-* LeaveType Repository
-* LeaveType Service Interface
-* Complete LeaveType Service Implementation
+* Service Layer
+* REST Controller Layer
+* CRUD APIs
+* Postman API Testing
 
 ---
 
 # Upcoming Tasks
 
-* Create LeaveType Controller
-* Create User Controller
-* Create Department Controller
-* Create Role Controller
-* Create LeaveRequest Controller
-* Test APIs using Postman
 * Global Exception Handling
 * DTO Layer
-* Validation
+* Request Validation
 * JWT Authentication
 * Spring Security
 * Swagger/OpenAPI Documentation
 * Unit Testing
+* Logging
 * Deployment
 
 ---
+
 # Concepts Learned So Far
 
 * Spring Boot Project Structure
@@ -418,6 +457,8 @@ Concepts Learned
 * Entity Mapping
 * Repository Layer
 * Service Layer
+* Controller Layer
+* REST API Development
 * CRUD Operations
 * Constructor-Based Dependency Injection
 * `JpaRepository`
@@ -425,11 +466,22 @@ Concepts Learned
 * `orElseThrow()` Exception Handling
 * JPA Relationships (`@ManyToOne`, `@JoinColumn`)
 * Enum Mapping with `@Enumerated`
+* HTTP Methods (`GET`, `POST`, `PUT`, `DELETE`)
+* `@RestController`
+* `@RequestMapping`
+* `@GetMapping`
+* `@PostMapping`
+* `@PutMapping`
+* `@DeleteMapping`
+* `ResponseEntity`
+* Request Body Mapping
+* Path Variables
 * MySQL Database Design
 * Primary Keys
 * Foreign Keys
 * Database Constraints (`NOT NULL`, `UNIQUE`, `AUTO_INCREMENT`)
 * Layered Architecture (Controller → Service → Repository)
+* API Testing with Postman
 * Git Version Control
 * GitHub Workflow (`status`, `add`, `commit`, `push`)
 
@@ -437,7 +489,7 @@ Concepts Learned
 
 # Project Status
 
-**Current Phase:** Backend Development
+**Current Phase:** REST API Development Completed
 
 ## Modules Completed
 
@@ -452,13 +504,17 @@ Concepts Learned
 * Entity Layer
 * Repository Layer
 * Service Layer
+* Controller Layer
+
+## Testing Status
+
+* CRUD APIs Tested Successfully using Postman
+* Database Operations Verified in MySQL
 
 ## Next Milestone
 
-* Implement REST Controllers for all modules
-* Test CRUD APIs using Postman
-* Add Global Exception Handling
-* Implement DTOs and Validation
+* Implement Global Exception Handling
+* Add DTOs and Validation
 * Integrate Spring Security with JWT Authentication
 * Generate Swagger/OpenAPI Documentation
 * Write Unit Tests
