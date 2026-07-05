@@ -1,5 +1,6 @@
 package com.leaveflow.leaveflow.service;
 
+import com.leaveflow.leaveflow.exception.ResourceNotFoundException;
 import com.leaveflow.leaveflow.model.LeaveRequest;
 import com.leaveflow.leaveflow.repository.LeaveRequestRepo;
 import org.springframework.stereotype.Service;
@@ -20,7 +21,7 @@ public class LeaveRequestImpl implements LeaveRequestService {
 
     @Override
     public LeaveRequest getLeaveRequestById(int id) {
-        return leaveRequestRepo.findById(id).orElseThrow(()->new RuntimeException("Leave Request Not Found"));
+        return leaveRequestRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Leave Request Not Found with ID "+id));
     }
 
     @Override
@@ -42,7 +43,7 @@ public class LeaveRequestImpl implements LeaveRequestService {
             return leaveRequestRepo.save(existingLeaveRequest);
         }
         else{
-            throw new RuntimeException("Leave Request Not found");
+            throw new ResourceNotFoundException("Leave Request Not found with ID "+id);
         }
     }
 

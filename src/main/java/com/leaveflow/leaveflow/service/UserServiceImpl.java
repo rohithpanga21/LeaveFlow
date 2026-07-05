@@ -1,5 +1,6 @@
 package com.leaveflow.leaveflow.service;
 
+import com.leaveflow.leaveflow.exception.ResourceNotFoundException;
 import com.leaveflow.leaveflow.model.User;
 import com.leaveflow.leaveflow.repository.UserRepo;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User getUserById(int id)  {
-        return userRepo.findById(id).orElseThrow(()->new RuntimeException("User Not Found"));
+        return userRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("User Not Found with ID "+id));
     }
 
     @Override
@@ -44,7 +45,7 @@ public class UserServiceImpl implements UserService{
             return userRepo.save(existingUser);
         }
         else {
-            throw new RuntimeException("User Not Found");
+            throw new ResourceNotFoundException("User Not Found with ID "+id);
         }
     }
 

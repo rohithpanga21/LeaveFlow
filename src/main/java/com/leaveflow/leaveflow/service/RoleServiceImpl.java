@@ -1,5 +1,6 @@
 package com.leaveflow.leaveflow.service;
 
+import com.leaveflow.leaveflow.exception.ResourceNotFoundException;
 import com.leaveflow.leaveflow.model.Role;
 import com.leaveflow.leaveflow.repository.RoleRepo;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class RoleServiceImpl implements RoleService {
     }
     @Override
     public Role getRoleById(int id) {
-        return roleRepo.findById(id).orElseThrow(()->new RuntimeException("Role not found"));
+        return roleRepo.findById(id).orElseThrow(()->new ResourceNotFoundException("Role not found with ID "+id));
     }
 
     @Override
@@ -30,7 +31,7 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public Role updateRole(int id,Role role) {
         Role existingRole = roleRepo.findById(id)
-                .orElseThrow(() -> new RuntimeException("Role not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Role not found with ID "+id));
 
         existingRole.setRoleName(role.getRoleName());
 
