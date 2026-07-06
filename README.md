@@ -12,29 +12,29 @@ The system automates employee leave management by allowing employees to apply fo
 
 ## Backend
 
-* Java 17
-* Spring Boot
-* Spring Data JPA (Hibernate)
-* Maven
+- Java 17
+- Spring Boot
+- Spring Data JPA (Hibernate)
+- Maven
 
 ## Database
 
-* MySQL
+- MySQL
 
 ## IDE
 
-* IntelliJ IDEA
+- IntelliJ IDEA
 
 ## Version Control
 
-* Git
-* GitHub
+- Git
+- GitHub
 
 ---
 
 # Project Architecture
 
-```
+```text
 Controller
       ↓
 Service
@@ -48,7 +48,7 @@ MySQL Database
 
 # Project Structure
 
-```
+```text
 com.leaveflow.leaveflow
 
 ├── controller
@@ -59,6 +59,7 @@ com.leaveflow.leaveflow
 ├── dto
 ├── exception
 ├── config
+├── validation
 └── LeaveflowApplication
 ```
 
@@ -68,17 +69,17 @@ com.leaveflow.leaveflow
 
 ## Tables
 
-* users
-* departments
-* roles
-* leave_types
-* leave_requests
+- users
+- departments
+- roles
+- leave_types
+- leave_requests
 
 ## Relationships
 
 ### Department
 
-```
+```text
 Department
      │
      │
@@ -87,7 +88,7 @@ Many Users
 
 ### Role
 
-```
+```text
 Role
     │
     │
@@ -96,7 +97,7 @@ Many Users
 
 ### Manager
 
-```
+```text
 User
    │
    │
@@ -113,24 +114,24 @@ Each employee is assigned to one manager.
 
 ### Fields
 
-* userId
-* firstName
-* lastName
-* email
-* password
-* phoneNo
-* joiningDate
-* leaveBalance
-* status
-* department
-* role
-* manager
+- userId
+- firstName
+- lastName
+- email
+- password
+- phoneNo
+- joiningDate
+- leaveBalance
+- status
+- department
+- role
+- manager
 
 ### Relationships
 
-* ManyToOne → Department
-* ManyToOne → Role
-* ManyToOne → Manager (Self Reference)
+- ManyToOne → Department
+- ManyToOne → Role
+- ManyToOne → Manager (Self Reference)
 
 ---
 
@@ -138,8 +139,8 @@ Each employee is assigned to one manager.
 
 ### Fields
 
-* deptId
-* deptName
+- deptId
+- deptName
 
 Relationship
 
@@ -151,8 +152,8 @@ One department can contain multiple users.
 
 ### Fields
 
-* roleId
-* roleName
+- roleId
+- roleName
 
 Relationship
 
@@ -164,10 +165,10 @@ One role can be assigned to multiple users.
 
 ### Fields
 
-* leaveTypeId
-* leaveTypeName
-* maxLeaves
-* description
+- leaveTypeId
+- leaveTypeName
+- maxLeaves
+- description
 
 Relationship
 
@@ -179,15 +180,15 @@ Referenced by Leave Requests.
 
 ### Fields
 
-* leaveId
-* startDate
-* endDate
-* reason
-* appliedDate
-* leaveStatus
-* approvedBy
-* user
-* leaveType
+- leaveId
+- startDate
+- endDate
+- reason
+- appliedDate
+- leaveStatus
+- approvedBy
+- user
+- leaveType
 
 ---
 
@@ -195,7 +196,7 @@ Referenced by Leave Requests.
 
 ## UserStatus
 
-```
+```java
 ACTIVE
 INACTIVE
 ```
@@ -214,11 +215,11 @@ Stored using
 
 Implemented in
 
-* Department
-* Role
-* Manager
-* LeaveType
-* User
+- Department
+- Role
+- Manager
+- LeaveType
+- User
 
 Example
 
@@ -232,12 +233,12 @@ private Department department;
 
 # Database Constraints
 
-* PRIMARY KEY
-* AUTO_INCREMENT
-* FOREIGN KEY
-* NOT NULL
-* UNIQUE
-* ENUM
+- PRIMARY KEY
+- AUTO_INCREMENT
+- FOREIGN KEY
+- NOT NULL
+- UNIQUE
+- ENUM
 
 ---
 
@@ -249,17 +250,23 @@ private Department department;
 
 Completed
 
-* Created Spring Boot project
-* Configured Maven
-* Connected MySQL database
-* Configured application.properties
-* Created project package structure
-* Created Entity package
-* Created Repository package
-* Created Service package
-* Created Controller package
-* Created Enum package
-* Learned Spring Boot layered architecture
+- Created Spring Boot project
+- Configured Maven
+- Connected MySQL database
+- Configured application.properties
+- Created project package structure
+- Created Entity package
+- Created Repository package
+- Created Service package
+- Created Controller package
+- Created Enum package
+- Learned Spring Boot layered architecture
+
+### Concepts Learned
+
+- Spring Boot Project Structure
+- Maven Configuration
+- Layered Architecture
 
 ---
 
@@ -269,26 +276,26 @@ Completed
 
 Completed
 
-* Designed database schema
-* Created Users entity
-* Created Department entity
-* Created Role entity
-* Implemented JPA annotations
-* Implemented entity relationships
-* Added UserStatus enum
-* Generated database tables using Hibernate
-* Verified table creation in MySQL
+- Designed database schema
+- Created Users entity
+- Created Department entity
+- Created Role entity
+- Implemented JPA annotations
+- Implemented entity relationships
+- Added UserStatus enum
+- Generated database tables using Hibernate
+- Verified table creation in MySQL
 
 ### Concepts Learned
 
-* Entity Mapping
-* Hibernate
-* JPA
-* ManyToOne Mapping
-* JoinColumn
-* Enum Mapping
-* Auto Increment
-* Foreign Keys
+- Entity Mapping
+- Hibernate
+- JPA
+- ManyToOne Mapping
+- JoinColumn
+- Enum Mapping
+- Auto Increment
+- Foreign Keys
 
 ---
 
@@ -298,24 +305,24 @@ Completed
 
 Completed
 
-* Created User Repository
-* Implemented User Service
-* Implemented User Service Implementation
-* Created LeaveRequest Entity
-* Created LeaveRequest Repository
-* Implemented LeaveRequest Service
-* Implemented LeaveRequest Service Implementation
-* Practiced CRUD operations using Spring Data JPA
-* Implemented constructor-based dependency injection
+- Created User Repository
+- Implemented User Service
+- Implemented User Service Implementation
+- Created LeaveRequest Entity
+- Created LeaveRequest Repository
+- Implemented LeaveRequest Service
+- Implemented LeaveRequest Service Implementation
+- Practiced CRUD operations using Spring Data JPA
+- Implemented constructor-based dependency injection
 
 ### Concepts Learned
 
-* JpaRepository
-* Dependency Injection
-* Constructor Injection
-* CRUD Operations
-* Optional
-* Service Layer Design
+- JpaRepository
+- Dependency Injection
+- Constructor Injection
+- CRUD Operations
+- Optional
+- Service Layer Design
 
 ---
 
@@ -327,45 +334,44 @@ Completed
 
 #### Department Module
 
-* Department Repository
-* Department Service
-* Department Service Implementation
-* CRUD operations
-* Exception handling using `orElseThrow()`
+- Department Repository
+- Department Service
+- Department Service Implementation
+- CRUD Operations
 
 #### Role Module
 
-* Role Repository
-* Role Service
-* Role Service Implementation
-* CRUD operations
+- Role Repository
+- Role Service
+- Role Service Implementation
+- CRUD Operations
 
 #### LeaveType Module
 
-* LeaveType Repository
-* LeaveType Service
-* LeaveType Service Implementation
-* CRUD operations
+- LeaveType Repository
+- LeaveType Service
+- LeaveType Service Implementation
+- CRUD Operations
 
 #### REST Controllers
 
 Implemented REST Controllers for all modules:
 
-* UserController
-* DepartmentController
-* RoleController
-* LeaveTypeController
-* LeaveRequestController
+- UserController
+- DepartmentController
+- RoleController
+- LeaveTypeController
+- LeaveRequestController
 
 Implemented REST endpoints using:
 
-* `@RestController`
-* `@RequestMapping`
-* `@GetMapping`
-* `@PostMapping`
-* `@PutMapping`
-* `@DeleteMapping`
-* `ResponseEntity`
+- `@RestController`
+- `@RequestMapping`
+- `@GetMapping`
+- `@PostMapping`
+- `@PutMapping`
+- `@DeleteMapping`
+- `ResponseEntity`
 
 #### API Testing
 
@@ -373,42 +379,133 @@ Successfully tested CRUD APIs using Postman.
 
 Verified:
 
-* Create operations (POST)
-* Retrieve operations (GET)
-* Update operations (PUT)
-* Delete operations (DELETE)
-* Request parameter handling
-* Path variable handling
-* JSON request and response bodies
-* Database persistence with MySQL
+- POST
+- GET
+- PUT
+- DELETE
+- JSON Request/Response
+- Database persistence
 
-#### Git Workflow Practiced
+### Concepts Learned
+
+- REST API Development
+- REST Controllers
+- ResponseEntity
+- Path Variables
+- Request Body Mapping
+- CRUD APIs
+- API Testing with Postman
+
+---
+
+## Day 5 — July 5, 2026
+
+### Global Exception Handling
+
+Completed
+
+- Created custom exception classes
+- Implemented Global Exception Handler using `@RestControllerAdvice`
+- Added centralized exception handling
+- Returned meaningful HTTP status codes
+- Improved API error responses
+- Eliminated duplicate exception handling from controllers
+
+### Exception Handling Implemented
+
+- Resource Not Found Exception
+- Validation Exception Handling
+- Generic Exception Handling
+
+### Concepts Learned
+
+- `@RestControllerAdvice`
+- `@ExceptionHandler`
+- Custom Exceptions
+- Centralized Exception Handling
+- HTTP Status Codes
+- API Error Response Design
+
+---
+
+## Day 6 — July 6, 2026
+
+### DTO Layer & Validation
+
+Completed
+
+#### DTO Implementation
+
+Created Request and Response DTOs for all modules.
+
+- UserRequestDto
+- UserResponseDto
+- DepartmentRequestDto
+- DepartmentResponseDto
+- RoleRequestDto
+- RoleResponseDto
+- LeaveTypeRequestDto
+- LeaveTypeResponseDto
+- LeaveRequestRequestDto
+- LeaveRequestResponseDto
+
+#### Service Refactoring
+
+- Refactored all services to use DTOs instead of Entities.
+- Implemented manual Entity ↔ DTO mapping.
+- Updated CRUD operations to work with DTOs.
+
+#### Controller Refactoring
+
+Updated all REST Controllers to consume Request DTOs and return Response DTOs.
+
+#### Request Validation
+
+Implemented Bean Validation using:
+
+- `@Valid`
+- `@NotBlank`
+- `@NotNull`
+- `@Email`
+- `@Size`
+- `@Positive`
+- `@PastOrPresent`
+
+Added validation annotations to Request DTOs.
+
+Validation errors are handled centrally using the Global Exception Handler.
+
+#### API Testing
+
+Successfully tested:
+
+- Valid requests
+- Invalid request validation
+- DTO request/response mapping
+- CRUD operations
+- Validation error responses
+
+### Git Workflow
 
 ```bash
 git status
 git add .
-git commit -m "Implemented REST Controllers and tested APIs"
+git commit -m "Implemented DTO layer and request validation"
 git push origin <branch-name>
 ```
 
 ### Concepts Learned
 
-* REST API Development
-* REST Controllers
-* Request Mapping
-* HTTP Methods (GET, POST, PUT, DELETE)
-* ResponseEntity
-* Path Variables
-* Request Body Mapping
-* Constructor Injection
-* JpaRepository
-* Optional
-* orElseThrow()
-* Service Layer Architecture
-* API Testing with Postman
-* Git Staging
-* Git Commits
-* GitHub Push Workflow
+- DTO Pattern
+- Request DTO
+- Response DTO
+- Entity to DTO Mapping
+- DTO to Entity Mapping
+- Bean Validation
+- Validation Annotations
+- `@Valid`
+- Clean Architecture
+- Separation of Concerns
 
 ---
 
@@ -416,106 +513,111 @@ git push origin <branch-name>
 
 ## Completed
 
-* Spring Boot Setup
-* Maven Configuration
-* MySQL Configuration
-* Project Structure
-* User Module
-* Department Module
-* Role Module
-* LeaveType Module
-* LeaveRequest Module
-* Entity Layer
-* Repository Layer
-* Service Layer
-* REST Controller Layer
-* CRUD APIs
-* Postman API Testing
+- Spring Boot Setup
+- Maven Configuration
+- MySQL Configuration
+- Project Structure
+- User Module
+- Department Module
+- Role Module
+- LeaveType Module
+- LeaveRequest Module
+- Entity Layer
+- Repository Layer
+- Service Layer
+- Controller Layer
+- Global Exception Handling
+- DTO Layer
+- Request Validation
+- CRUD APIs
+- Postman API Testing
 
 ---
 
 # Upcoming Tasks
 
-* Global Exception Handling
-* DTO Layer
-* Request Validation
-* JWT Authentication
-* Spring Security
-* Swagger/OpenAPI Documentation
-* Unit Testing
-* Logging
-* Deployment
+- JWT Authentication
+- Spring Security
+- Swagger/OpenAPI Documentation
+- Unit Testing (JUnit & Mockito)
+- Logging (SLF4J / Logback)
+- Pagination & Sorting
+- Deployment
 
 ---
 
 # Concepts Learned So Far
 
-* Spring Boot Project Structure
-* Maven Build Lifecycle
-* Spring Data JPA
-* Hibernate ORM
-* Entity Mapping
-* Repository Layer
-* Service Layer
-* Controller Layer
-* REST API Development
-* CRUD Operations
-* Constructor-Based Dependency Injection
-* `JpaRepository`
-* `Optional` API
-* `orElseThrow()` Exception Handling
-* JPA Relationships (`@ManyToOne`, `@JoinColumn`)
-* Enum Mapping with `@Enumerated`
-* HTTP Methods (`GET`, `POST`, `PUT`, `DELETE`)
-* `@RestController`
-* `@RequestMapping`
-* `@GetMapping`
-* `@PostMapping`
-* `@PutMapping`
-* `@DeleteMapping`
-* `ResponseEntity`
-* Request Body Mapping
-* Path Variables
-* MySQL Database Design
-* Primary Keys
-* Foreign Keys
-* Database Constraints (`NOT NULL`, `UNIQUE`, `AUTO_INCREMENT`)
-* Layered Architecture (Controller → Service → Repository)
-* API Testing with Postman
-* Git Version Control
-* GitHub Workflow (`status`, `add`, `commit`, `push`)
+- Spring Boot Project Structure
+- Maven Build Lifecycle
+- Spring Data JPA
+- Hibernate ORM
+- Entity Mapping
+- Repository Layer
+- Service Layer
+- Controller Layer
+- REST API Development
+- CRUD Operations
+- Constructor-Based Dependency Injection
+- JpaRepository
+- Optional API
+- JPA Relationships
+- Enum Mapping
+- ResponseEntity
+- Path Variables
+- Request Body Mapping
+- DTO Pattern
+- Entity ↔ DTO Mapping
+- Bean Validation
+- Validation Annotations
+- Global Exception Handling
+- `@RestControllerAdvice`
+- `@ExceptionHandler`
+- Custom Exceptions
+- Clean Architecture
+- Separation of Concerns
+- Layered Architecture
+- API Testing with Postman
+- Git Version Control
+- GitHub Workflow
 
 ---
 
 # Project Status
 
-**Current Phase:** REST API Development Completed
+**Current Phase:** DTO Layer, Validation & Global Exception Handling Completed
 
 ## Modules Completed
 
-* User Module
-* Department Module
-* Role Module
-* LeaveType Module
-* LeaveRequest Module
+- User Module
+- Department Module
+- Role Module
+- LeaveType Module
+- LeaveRequest Module
 
 ## Layers Completed
 
-* Entity Layer
-* Repository Layer
-* Service Layer
-* Controller Layer
+- Entity Layer
+- Repository Layer
+- Service Layer
+- Controller Layer
+- DTO Layer
+- Validation Layer
+- Global Exception Handling
 
 ## Testing Status
 
-* CRUD APIs Tested Successfully using Postman
-* Database Operations Verified in MySQL
+- CRUD APIs Tested Successfully using Postman
+- DTO Request/Response Verified
+- Validation Tested
+- Exception Responses Verified
+- Database Operations Verified in MySQL
 
 ## Next Milestone
 
-* Implement Global Exception Handling
-* Add DTOs and Validation
-* Integrate Spring Security with JWT Authentication
-* Generate Swagger/OpenAPI Documentation
-* Write Unit Tests
-* Deploy the application
+- Implement Spring Security
+- Integrate JWT Authentication
+- Generate Swagger/OpenAPI Documentation
+- Write Unit Tests
+- Add Logging
+- Deploy the Application
