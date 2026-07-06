@@ -1,13 +1,15 @@
 package com.leaveflow.leaveflow.service;
 
+import com.leaveflow.leaveflow.dto.RoleRequestDto;
+import com.leaveflow.leaveflow.dto.RoleResponseDto;
 import com.leaveflow.leaveflow.model.Role;
 
 import java.util.List;
 
 public interface RoleService {
-    Role getRoleById(int id);
-    Role createRole(Role role);
+    RoleResponseDto getRoleById(int id);
+    RoleResponseDto createRole(RoleRequestDto roleRequestDto);
     void deleteRoleById(int id);
-    Role updateRole(int id,Role role);
-    List<Role> getAllRoles();
+    RoleResponseDto updateRole(int id,RoleRequestDto roleRequestDto);
+    List<RoleResponseDto> getAllRoles();
 }

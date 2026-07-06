@@ -1,17 +1,19 @@
 package com.leaveflow.leaveflow.service;
 
+import com.leaveflow.leaveflow.dto.LeaveTypeRequestDto;
+import com.leaveflow.leaveflow.dto.LeaveTypeResponseDto;
 import com.leaveflow.leaveflow.model.LeaveType;
 
 import java.util.List;
 
 public interface LeaveTypeService {
-    List<LeaveType> getAllLeaveTypes();
+    List<LeaveTypeResponseDto> getAllLeaveTypes();
 
-    LeaveType getLeaveTypeById(int id);
+    LeaveTypeResponseDto getLeaveTypeById(int id);
 
-    LeaveType createLeaveType(LeaveType leaveType);
+    LeaveTypeResponseDto createLeaveType(LeaveTypeRequestDto leaveTypeRequestDto);
 
-    LeaveType updateLeaveType(int id, LeaveType leaveType);
+    LeaveTypeResponseDto updateLeaveType(int id, LeaveTypeRequestDto leaveTypeRequestDto);
 
     void deleteLeaveTypeById(int id);
 }

@@ -10,10 +10,10 @@ import jakarta.persistence.Table;
 public class LeaveType {
     @Id
     @Column(name = "leave_type_id")
-    private int leaveId;
+    private int leaveTypeId;
 
     @Column(name = "leave_name")
-    private String leaveName;
+    private String leaveTypeName;
 
     @Column(name = "max_days")
     private int maxDays;
@@ -22,20 +22,20 @@ public class LeaveType {
 
     }
 
-    public int getLeaveId() {
-        return leaveId;
+    public int getLeaveTypeId() {
+        return leaveTypeId;
     }
 
-    public void setLeaveId(int leaveId) {
-        this.leaveId = leaveId;
+    public void setLeaveTypeId(int leaveId) {
+        this.leaveTypeId = leaveId;
     }
 
-    public String getLeaveName() {
-        return leaveName;
+    public String getLeaveTypeName() {
+        return leaveTypeName;
     }
 
-    public void setLeaveName(String leaveName) {
-        this.leaveName = leaveName;
+    public void setLeaveTypeName(String leaveName) {
+        this.leaveTypeName = leaveName;
     }
 
     public int getMaxDays() {

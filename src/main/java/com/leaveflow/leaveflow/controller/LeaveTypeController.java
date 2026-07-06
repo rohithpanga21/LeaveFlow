@@ -1,5 +1,7 @@
 package com.leaveflow.leaveflow.controller;
 
+import com.leaveflow.leaveflow.dto.LeaveTypeRequestDto;
+import com.leaveflow.leaveflow.dto.LeaveTypeResponseDto;
 import com.leaveflow.leaveflow.model.LeaveType;
 import com.leaveflow.leaveflow.service.LeaveTypeService;
 import org.springframework.http.ResponseEntity;
@@ -17,23 +19,23 @@ public class LeaveTypeController {
     }
 
     @GetMapping
-    public ResponseEntity<List<LeaveType>> getAllLeaveTypes(){
+    public ResponseEntity<List<LeaveTypeResponseDto>> getAllLeaveTypes(){
         return ResponseEntity.ok(service.getAllLeaveTypes());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<LeaveType> getLeaveTypeById(@PathVariable int id){
+    public ResponseEntity<LeaveTypeResponseDto> getLeaveTypeById(@PathVariable int id){
         return ResponseEntity.ok(service.getLeaveTypeById(id));
     }
 
     @PostMapping
-    public ResponseEntity<LeaveType> createLeaveType(@RequestBody LeaveType leaveType) {
-        return ResponseEntity.ok(service.createLeaveType(leaveType));
+    public ResponseEntity<LeaveTypeResponseDto> createLeaveType(@RequestBody LeaveTypeRequestDto leaveTypeRequestDto) {
+        return ResponseEntity.ok(service.createLeaveType(leaveTypeRequestDto));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<LeaveType> updateLeaveType(@PathVariable int id, @RequestBody LeaveType leaveType) {
-        return ResponseEntity.ok(service.updateLeaveType(id, leaveType));
+    public ResponseEntity<LeaveTypeResponseDto> updateLeaveType(@PathVariable int id, @RequestBody LeaveTypeRequestDto leaveTypeRequestDto) {
+        return ResponseEntity.ok(service.updateLeaveType(id, leaveTypeRequestDto));
     }
 
     @DeleteMapping("/{id}")

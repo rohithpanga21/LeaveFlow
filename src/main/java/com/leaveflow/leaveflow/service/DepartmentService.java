@@ -1,20 +1,19 @@
 package com.leaveflow.leaveflow.service;
 
-import com.leaveflow.leaveflow.model.Department;
-
+import com.leaveflow.leaveflow.dto.DepartmentRequestDto;
+import com.leaveflow.leaveflow.dto.DepartmentResponseDto;
 
 import java.util.List;
 
-
 public interface DepartmentService {
-    List<Department> getAllDepartments();
 
-    Department getDeptById(int id);
+    List<DepartmentResponseDto> getAllDepartments();
 
-    Department updateDept(int id, Department dept);
+    DepartmentResponseDto getDeptById(int id);
+
+    DepartmentResponseDto createDept(DepartmentRequestDto dto);
+
+    DepartmentResponseDto updateDept(int id, DepartmentRequestDto dto);
 
     void deleteDeptById(int id);
-
-    Department createDept(Department dept);
-
 }

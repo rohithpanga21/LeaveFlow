@@ -1,13 +1,23 @@
 package com.leaveflow.leaveflow.service;
 
-import com.leaveflow.leaveflow.model.LeaveRequest;
+import com.leaveflow.leaveflow.dto.LeaveRequestDto;
+import com.leaveflow.leaveflow.dto.LeaveResponseDto;
 
 import java.util.List;
 
 public interface LeaveRequestService {
-    LeaveRequest saveLeaveRequest(LeaveRequest leaveRequest);
-    LeaveRequest getLeaveRequestById(int id);
-    List<LeaveRequest> getAllLeaveRequest();
-    LeaveRequest updateLeaveRequest(int id,LeaveRequest leaveRequest);
+
+    LeaveResponseDto createLeaveRequest(LeaveRequestDto dto);
+
+    LeaveResponseDto getLeaveRequestById(int id);
+
+    List<LeaveResponseDto> getAllLeaveRequests();
+
+    LeaveResponseDto updateLeaveRequest(int id, LeaveRequestDto dto);
+
     void deleteLeaveRequest(int id);
+
+    LeaveResponseDto approveLeaveRequest(int leaveId, int approvedById);
+
+    LeaveResponseDto rejectLeaveRequest(int leaveId, int approvedById);
 }
