@@ -536,12 +536,54 @@ git push origin <branch-name>
 
 # Upcoming Tasks
 
-- JWT Authentication
-- Spring Security
-- Swagger/OpenAPI Documentation
-- Unit Testing (JUnit & Mockito)
-- Logging (SLF4J / Logback)
+## Authentication & Authorization
+
+- Implement Spring Security
+- Configure JWT Authentication (Login API)
+- Generate and validate JWT tokens
+- Secure REST APIs using JWT
+- Implement Role-Based Authorization
+    - Admin access
+    - Manager access
+    - Employee access
+
+---
+
+## Leave Management Features
+
+### Employee Features
+
+- Apply for Leave
+- View Own Leave Requests
+- View Leave History
+- Cancel Pending Leave Request
+
+### Manager Features
+
+- View Pending Leave Requests
+- Approve Leave Request
+- Reject Leave Request
+- View Team Leave History
+
+### Business Validations
+
+- Validate Leave Balance before applying
+- Prevent leave application if balance is insufficient
+- Prevent overlapping leave requests
+- Validate Start Date and End Date
+- Prevent applying for past dates
+- Automatically deduct leave balance after approval
+- Restore leave balance when leave is cancelled (if applicable)
+
+---
+
+## Additional Features
+
 - Pagination & Sorting
+- Search and Filter APIs
+- Swagger/OpenAPI Documentation
+- Logging (SLF4J / Logback)
+- Unit Testing (JUnit & Mockito)
 - Deployment
 
 ---
@@ -621,3 +663,4 @@ git push origin <branch-name>
 - Write Unit Tests
 - Add Logging
 - Deploy the Application
+- Role Based Access
